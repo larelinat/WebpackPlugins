@@ -1,0 +1,15 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        title='Быстрый запуск Webpack'
+    body
+        p Файл создан с использованием шаблонизатора Pug
+        .logo-png
+            img.logo1(src=require('./images/logowp.png') alt='Загрузка PNG c помощью Webpack')
+        .logo-svg
+            img.logo2(src=require('./images/logo.svg') alt='Загрузка SVG c помощью Webpack')
+
+            include:markdown-it ./content/article.md
+
+        #root
