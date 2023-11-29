@@ -4,7 +4,6 @@ const FileManagerPlugin = require("filemanager-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const ConsolerPlugin = require("./wpplugins/consoler");
-
 module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
@@ -29,13 +28,16 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "index.[contenthash].css",
         }),
-        new ConsolerPlugin({options: true}),
+        new ConsolerPlugin({fileName: "result.js"}),
     ],
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
         port: 3000,
     },
-    entry: path.join(__dirname, 'src', 'index.js'),
+    entry: {
+        app1: path.join(__dirname, 'src', 'index.js'),
+        app2: path.join(__dirname, 'src', 'index2.js'),
+    },
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.[contenthash].js',

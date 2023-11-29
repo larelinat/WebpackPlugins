@@ -6,7 +6,7 @@ import App from './components/app'
 
 function component(text) {
     const element = document.createElement('h1');
-    element.textContent = text;
+    element.textContent = text + "hello" + "world";
     return element;
 }
 
